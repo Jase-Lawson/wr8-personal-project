@@ -1,0 +1,58 @@
+.auth-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.auth-subContainer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.auth-register-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: solid 1px #C49D7E;
+  margin: 15px;
+  padding: 10px;
+  color: #e6d6c9ec;
+  font-size: 16px;
+  border-radius: 3%;
+}
+
+.login-button {
+  height: 50px;
+  width: 100px;
+  background-color: #AB5441;
+  color: white;
+  border: none;
+  margin: 0;
+}
+
+.create-button {
+  height: 50px;
+  width: 100px;
+  background-color: #AB5441;
+  color: white;
+  border: none;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
