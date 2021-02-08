@@ -45,4 +45,3 @@ product_id int references product(product_id),
 customer_id int references customer(customer_id),
 quantity int
 );
-

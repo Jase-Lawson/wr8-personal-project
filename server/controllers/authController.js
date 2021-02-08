@@ -17,6 +17,8 @@ module.exports = {
 
     // console.log(newUser)
 
+    await db.cart.create_cart({ customer_id: newUser.customer_id })
+
     req.session.user = newUser
     res.status(201).send(req.session.user)
 

@@ -34,7 +34,7 @@ app.put('/auth/edit', authCtrl.edit)
 
 // cart endpoints
 
-app.get(`/api/cart/:customerId`, cartCtrl.getCart)
+app.get(`/api/cart`, cartCtrl.getCart)
 app.post('/api/cart', cartCtrl.addToCart)
 app.put('/api/cart', cartCtrl.changeQuantity)
 app.delete('/api/cart', cartCtrl.deleteCart)

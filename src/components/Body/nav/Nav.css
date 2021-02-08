@@ -21,7 +21,7 @@
 }
 
 .nav-bar {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -43,7 +43,7 @@
 
 .nav-links {
   /* background-color: paleturquoise; */
-  width: 100%;
+  width: 100vw;
   margin-left: 100px;
   margin-right: 100px;
   text-decoration: none;
