@@ -38,9 +38,9 @@ const ProductList = (props) => {
         {products.map((product, i) => {
           return <div>
             <Link to={`/Product/${product.product_id}`} className='product-link'>
-              <h3>{products[i].name}</h3>
-              <img src={products[i].img} alt='product' height='50' width='50' />
-              <p>{products[i].price}</p>
+              <h3>{product.name}</h3>
+              <img src={product.img} alt='product' height='50' width='50' />
+              <p>{product.price}</p>
             </Link>
             <input min='1' type='number' name='quantity' placeholder='1' onChange={e => { setQuantity(e.target.value) }} />
             <button onClick={() => addToCart(product)}>Add To Cart</button>

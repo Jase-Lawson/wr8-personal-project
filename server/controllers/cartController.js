@@ -21,16 +21,27 @@ module.exports = {
     res.status(200).send('added to cart')
   },
 
-  changeQuantity: async (req, res) => {
+  updateQuantity: async (req, res) => {
 
     const db = req.app.get('db')
+    const { quantity, product_id } = req.body
+    const { customer_id } = req.session.user
 
-    await db.cart.change_quantity({})
+    await db.cart.update_quantity({ quantity, customer_id, product_id, junction_id })
 
+    const updatedCart = await db.cart.get_all_cart_items({ customer_id })
 
+    res.status(200).send(updatedCart)
   },
 
-  deleteCart: (req, res) => {
+  deleteItem: (req, res) => {
 
+    const db = req.app.get('db')
+    const { product_id, junction_id } = req.body
+    const { customer_id } = req.session.user
+
+    db.cart.delete({ customer_id, product_id, junction_id })
+
+    res.sendStatus(200)
   }
 }

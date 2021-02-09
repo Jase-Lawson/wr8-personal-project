@@ -9,7 +9,7 @@ insert into cart_item (
   ${quantity},
   ${customer_id}
 )
-returning cart_id, product_id, quantity;
+returning *;
 
 
 
