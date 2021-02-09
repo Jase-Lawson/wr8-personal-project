@@ -6,29 +6,28 @@ import { connect } from 'react-redux'
 
 const CartItem = (props) => {
 
+  // useEffect(() => {
+  //   axios.get(`/api/cart`)
+  //     .then(res => getCart(res.data))
+  //     .catch(err => console.log(err))
+
+  // }, [getCart]);
+
   const { item } = props
   const { getCart } = props
   const [quantity, setQuantity] = useState(item.quantity)
 
-  useEffect(() => {
-    axios.get(`/api/cart`)
-      .then(res => getCart(res.data))
-      .catch(err => console.log(err))
-
-  }, [item.quantity]);
-
-
   const handleRemove = (item) => {
-    axios.delete('/api/cart', { product_id: item.product_id, junction_id: item.junction_id })
+    axios.delete(`/api/cart/${item.junction_id}`)
       .then((res) => { getCart(res.data) })
       .catch(err => console.log(err))
   }
 
   const handleUpdate = (item) => {
-    console.log(item.product_id)
-    axios.put('/api/cart', { quantity: quantity, product_id: item.product_id, junction_id: item.junction_id })
+    console.log(item)
+    axios.put('/api/cart', { quantity: quantity, junction_id: item.junction_id })
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         getCart(res.data)
       })
       .catch(err => console.log(err))
@@ -44,7 +43,7 @@ const CartItem = (props) => {
         <button onClick={() => { handleRemove(item) }} >Remove</button>
         <button onClick={() => { handleUpdate(item) }} >Update Quantity</button>
         <p>Total</p>
-        {item.price * item.quantity}
+        <p>{(item.price * item.quantity).toFixed(2)}</p>
       </div>
     </div>
   )

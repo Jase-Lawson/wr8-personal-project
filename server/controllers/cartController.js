@@ -24,24 +24,25 @@ module.exports = {
   updateQuantity: async (req, res) => {
 
     const db = req.app.get('db')
-    const { quantity, product_id } = req.body
+    const { quantity, junction_id } = req.body
     const { customer_id } = req.session.user
 
-    await db.cart.update_quantity({ quantity, customer_id, product_id, junction_id })
+    await db.cart.update_quantity({ quantity, junction_id })
 
     const updatedCart = await db.cart.get_all_cart_items({ customer_id })
 
     res.status(200).send(updatedCart)
   },
 
-  deleteItem: (req, res) => {
+  deleteItem: async (req, res) => {
 
     const db = req.app.get('db')
-    const { product_id, junction_id } = req.body
+    const { junction_id } = req.params
     const { customer_id } = req.session.user
+    db.cart.delete({ junction_id })
 
-    db.cart.delete({ customer_id, product_id, junction_id })
+    const updatedCart = await db.cart.get_all_cart_items({ customer_id })
 
-    res.sendStatus(200)
+    res.status(200).send(updatedCart)
   }
 }

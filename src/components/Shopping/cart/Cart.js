@@ -26,7 +26,7 @@ const Cart = (props) => {
             This is the Cart being returned
           </h1>
           {cartItems?.map((item, i) => {
-            return <CartItem item={item} key={i} />
+            return <CartItem item={item} key={item.junction_id} />
           })}
         </>
       ) : (props.history.push('/Account/Login'))
