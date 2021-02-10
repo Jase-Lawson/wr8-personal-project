@@ -1,5 +1,6 @@
 const initialState = {
   cartItems: [],
+  // cartTotal:
 }
 
 const GET_CART = 'GET_CART'

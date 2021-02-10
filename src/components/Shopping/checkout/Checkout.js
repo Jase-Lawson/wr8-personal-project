@@ -1,10 +1,27 @@
+import { connect } from 'react-redux';
 
-const Checkout = () => {
+
+const Checkout = (props) => {
+
+ 
+
+
   return (
     <div>
       Checkout Page
+
+     
+
     </div>
   )
 }
 
-export default Checkout
+
+const mapStateToProps = (reduxState) => {
+  return {
+    userReducer: reduxState.userReducer,
+    cartReducer: reduxState.cartReducer
+  }
+};
+
+export default connect(mapStateToProps, {})(Checkout)

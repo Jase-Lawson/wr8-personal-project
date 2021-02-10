@@ -1,21 +1,15 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { getCart } from '../../../ducks/cartReducer';
 import { connect } from 'react-redux'
 
 
 const CartItem = (props) => {
 
-  // useEffect(() => {
-  //   axios.get(`/api/cart`)
-  //     .then(res => getCart(res.data))
-  //     .catch(err => console.log(err))
-
-  // }, [getCart]);
-
   const { item } = props
   const { getCart } = props
   const [quantity, setQuantity] = useState(item.quantity)
+  const total = (item.price * item.quantity).toFixed(2)
 
   const handleRemove = (item) => {
     axios.delete(`/api/cart/${item.junction_id}`)
@@ -43,7 +37,7 @@ const CartItem = (props) => {
         <button onClick={() => { handleRemove(item) }} >Remove</button>
         <button onClick={() => { handleUpdate(item) }} >Update Quantity</button>
         <p>Total</p>
-        <p>{(item.price * item.quantity).toFixed(2)}</p>
+        <p>{total}</p>
       </div>
     </div>
   )
