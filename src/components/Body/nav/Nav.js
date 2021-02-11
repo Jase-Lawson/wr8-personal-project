@@ -26,13 +26,13 @@ const Nav = (props) => {
       <nav className='nav-bar'>
         <Link to='/' > <img alt='Stella * Haas Logo' src={SH} className='logo' /> </Link>
         <div className='nav-links'>
-          <Link to='/collections' className='nav-link'>Necklaces</Link>
-          <Link to='/collections' className='nav-link'>Earrings </Link>
-          <Link to='/collections' className='nav-link'>Bracelets</Link>
-          <Link to='/collections' className='nav-link'>Rings </Link>
-          <Link to='/collections' className='nav-link'>Gift Ideas</Link>
-          <Link to='/collections' className='nav-link'>Accessories</Link>
-          <Link to='/collections' className='nav-link'>SALE</Link>
+          <Link to='/Collections' className='nav-link'>Necklaces</Link>
+          <Link to='/Collections' className='nav-link'>Earrings </Link>
+          <Link to='/Collections' className='nav-link'>Bracelets</Link>
+          <Link to='/Collections' className='nav-link'>Rings </Link>
+          <Link to='/Collections' className='nav-link'>Gift Ideas</Link>
+          <Link to='/Collections' className='nav-link'>Accessories</Link>
+          <Link to='/Collections' className='nav-link'>SALE</Link>
         </div>
         <div className='nav-icons'>
           <Link to='/search' className='icon' > <img alt='search' src={search} /></Link>
