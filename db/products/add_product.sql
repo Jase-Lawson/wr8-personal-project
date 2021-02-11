@@ -10,4 +10,5 @@ ${category},
 ${sku},
 ${price},
 ${img}
-);
+)
+returning product_id, url;

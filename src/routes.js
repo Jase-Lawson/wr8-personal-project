@@ -17,7 +17,6 @@ import About from './components/Info/about/About'
 import Ambassadors from './components/Info/ambassadors/Ambassadors';
 
 
-
 export default (
   <Switch>
     <Route exact path='/' component={Landing} />

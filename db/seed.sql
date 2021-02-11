@@ -13,15 +13,6 @@ password varchar(100) not null,
 isAdmin boolean not null
 );
 
-create table product (
-product_id serial primary key,
-name varchar(150),
-product_category varchar(60),
-sku varchar(200) unique,
-price numeric,
-img text
-);
-
 create table invoice (
 invoice_id serial primary key,
 customer_id int references customer(customer_id),
@@ -44,4 +35,18 @@ cart_id int references cart(cart_id),
 product_id int references product(product_id),
 customer_id int references customer(customer_id),
 quantity int
+);
+
+create table product (
+product_id serial primary key,
+name varchar(150),
+product_category varchar(60),
+sku varchar(200) unique,
+price numeric
+);
+
+create table product_image (
+image_id serial primary key,
+product_id int references product(product_id),
+url text
 );

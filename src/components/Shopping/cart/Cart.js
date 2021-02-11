@@ -44,9 +44,6 @@ const Cart = (props) => {
     });
   }
 
-
-
-
   // console.log(props)
   return (
     <div>
@@ -56,7 +53,7 @@ const Cart = (props) => {
             This is the Cart being returned
           </h1>
 
-          {total}
+          {total > 0 ? <>{total.toFixed(2)}</> : <h3>You don't have anything in your cart!</h3>}
 
           <StripeCheckout
             token={onToken}
