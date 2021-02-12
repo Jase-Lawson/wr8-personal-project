@@ -39,7 +39,7 @@ const ProductList = (props) => {
           return <div>
             <Link to={`/Product/${product.product_id}`} className='product-link'>
               <h3>{product.name}</h3>
-              <img src={product.img} alt='product' height='50' width='50' />
+              <img src={product.img} alt='product' height='150' width='150 />
               <p>{product.price}</p>
             </Link>
             <input min='1' type='number' name='quantity' placeholder='1' onChange={e => { setQuantity(e.target.value) }} />
@@ -53,4 +53,4 @@ const ProductList = (props) => {
 
 const mapStateToProps = reduxState => reduxState
 
-export default connect(mapStateToProps, { getProducts, getCart })(withRouter(ProductList))
+export default connect(mapStateToProps, { getProducts, getCart})(withRouter(ProductList))
