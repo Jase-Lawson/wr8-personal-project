@@ -33,7 +33,7 @@ const ProductList = (props) => {
   // console.log(props)
   return (
     <div>
-      Collection
+      {/* Collection */}
       <div className='products-display' >
         {products.map((product, i) => {
           return <div>

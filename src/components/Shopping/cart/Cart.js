@@ -4,6 +4,7 @@ import { getCart } from '../../../ducks/cartReducer';
 import { connect } from 'react-redux';
 import CartItem from '../cartItem/CartItem';
 import StripeCheckout from 'react-stripe-checkout';
+import './Cart.css'
 
 const public_key = 'pk_test_51IJMLkKgnnTCroimhePbn43EEyPf7UMmo8qZrbtpJX6i9cENs2Se9qJ6qBIcy1DdmAYBlqxtVzYk10jAcaEcVuXh009QbAVspy'
 
@@ -46,27 +47,27 @@ const Cart = (props) => {
 
   // console.log(props)
   return (
-    <div>
+    <div className='cart-container'>
       {props.userReducer.customer ? (
-        <>
+        <div className='cart' >
           <h1>
             This is the Cart being returned
           </h1>
 
-          {total > 0 ? <>{total.toFixed(2)}</> : <h3>You don't have anything in your cart!</h3>}
 
           <StripeCheckout
             token={onToken}
             stripeKey={public_key}
             amount={total * 100}
           />
+          {total > 0 ? <>Cart Total  {total.toFixed(2)}</> : <h3>You don't have anything in your cart!</h3>}
 
           {/* <Link to='/Checkout'>Checkout</Link> */}
           {cartItems?.map((item, i) => {
             return <CartItem item={item} key={item.junction_id} />
           })}
 
-        </>
+        </div>
       ) : (props.history.push('/Account/Login'))
       }
 

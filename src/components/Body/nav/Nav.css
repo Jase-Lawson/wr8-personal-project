@@ -74,17 +74,26 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin-right: 50px;
+  text-decoration: none;
+color: black;
+
 }
 
 .icon {
   margin-left: 10px;
   margin-right: 10px;
+  text-decoration: none;
+  color: black;
+
 }
 
 .mobile-icon {
   display: flex;
   margin-left: 10px;
   margin-right: 10px;
+  text-decoration: none;
+  color: black;
+
 }
 
 .svg {
@@ -126,6 +135,9 @@
 
 .nav-icons {
   display: none;
+  text-decoration: none;
+  color: black;
+
 }
 
 .hamburger{
@@ -160,6 +172,8 @@
 
 .nav-icons {
   display: none;
+  text-decoration: none;
+  color: black;
 }
 
 .hamburger{
