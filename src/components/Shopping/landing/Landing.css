@@ -1,0 +1,12 @@
+.landing-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  width: 100vw;
+  /* align-items: baseline; */
+}
+
+.landing-image {
+  width: 33vw;
+  height: 33vw;
+}

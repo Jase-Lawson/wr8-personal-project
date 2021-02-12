@@ -46,7 +46,7 @@ const Footer = (props) => {
               </div>
             )}
         </div>
-      </div>
+      </div >
       <div className='footer-dev'>
         Website Developed by: Jase Lawson
       </div>
