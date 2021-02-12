@@ -24,7 +24,7 @@ module.exports = {
   },
 
   delete: async (req, res) => {
-    const { sku } = req.body
+    const { sku } = req.params
     const db = req.app.get('db')
 
     await db.products.delete_product({ sku })

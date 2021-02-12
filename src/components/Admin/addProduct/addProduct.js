@@ -84,7 +84,7 @@ const AddProduct = (props) => {
 
   const handleDelete = (e) => {
     e.preventDefault()
-    axios.delete('/api/product', adminInput.sku)
+    axios.delete(`/api/product/${adminInput.sku}`)
       .then(() => { clearInput() })
       .catch(err => console.log(err))
   }
@@ -152,7 +152,7 @@ const AddProduct = (props) => {
       });
   }
 
-  // console.log('props', props)
+  console.log('props', props)
   return (
 
     <div>
@@ -194,8 +194,8 @@ const AddProduct = (props) => {
                 <button className='button' onClick={handleDelete}>Delete</button>
               </form>
             ) : (addImageView === true ? (
-              <form className='input-form' onSubmit={(e) => handleDelete(e)}>
-                <p>something about adding an image</p>
+              <form className='input-form' onSubmit={(e) => handleAddImage(e)}>
+                <p>Drop image file below and enter product Sku to add new images.</p>
                 <input className='input' placeholder='SKU' name='sku' value={adminInput.sku} onChange={handleInput} />
                 <input className='input' placeholder='Image URL' name='imageUrl' value={url} />
                 <button className='button' onClick={handleAddImage}>Add Image</button>

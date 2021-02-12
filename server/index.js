@@ -49,7 +49,7 @@ app.get(`/api/product/:product_id`, productCtrl.getProduct)
 app.get('/api/products', productCtrl.getProducts)
 app.post('/api/product', productCtrl.add)
 app.put('/api/product', productCtrl.edit)
-app.delete('/api/product', productCtrl.delete)
+app.delete('/api/product/:sku', productCtrl.delete)
 app.post('/api/product_image', productCtrl.addImage)
 
 // payment endpoints

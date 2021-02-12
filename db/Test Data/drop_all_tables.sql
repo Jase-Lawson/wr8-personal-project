@@ -1,0 +1,5 @@
+-- drop table product_image;
+-- drop table cart_item;
+-- drop table cart;
+-- drop table product;
+-- drop table customer;
